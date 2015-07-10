@@ -6,8 +6,8 @@
 
 class Embed
 	constructor: (message) ->
-		if _.trim message.msg
-			msg = message.msg
+		if(message.urls?)
+			msg = message.urls[0].url
 			picture = msg.match(/^(https:\/\/\S*\.(?:jpe?g|gif|png))$/i)
 			webm = msg.match(/^(https:\/\/\S*\.(?:webm|gifv))$/i)
 			youtube = msg.match(/^https:\/\/\S*[youtube.com|youtu.be]\/watch\?\S*v=(\w*)\S*$/i)
